@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.views.generic import TemplateView
 from product.models import Product , Category
 # Create your views here.
 
@@ -11,3 +12,6 @@ def home(request):
     context = { 'all_category' : all_category , 'products' : products}
 
     return render(request , template , context)
+
+class Post_ad(TemplateView):
+    template_name = 'post-ad.html'
